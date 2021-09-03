@@ -5,6 +5,7 @@ import { MongoClient } from "mongodb";
 import MeetupList from "../components/meetups/MeetupList";
 
 function HomePage(props) {
+  console.log("Inside client side code!");
   return (
     <Fragment>
       <Head>
@@ -32,9 +33,7 @@ function HomePage(props) {
 // this function is called only during the build process to fetch data for static generation
 export async function getStaticProps() {
   // fetch data from an api
-  const client = await MongoClient.connect(
-    "mongodb+srv://reactcourse:MTbiker1974@cdlyelpcamp.i9yvu.mongodb.net/meetups?retryWrites=true&w=majority"
-  );
+  const client = await MongoClient.connect(process.env.MONGODB_CONNECT);
   const db = client.db();
 
   const meetupsCollection = db.collection("meetups");
