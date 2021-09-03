@@ -42,7 +42,7 @@ export async function getStaticPaths() {
     // Will there be dynamically generated pages?
     // fallback === false --- the params returned are all possible pages
     // fallback === true  --- atttempt to dynamically generate a page if not in this list
-    fallback: false,
+    fallback: "blocking",
     paths: meetups.map((meetup) => {
       return {
         params: {
