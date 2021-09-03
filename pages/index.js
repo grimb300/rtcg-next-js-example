@@ -5,7 +5,6 @@ import { MongoClient } from "mongodb";
 import MeetupList from "../components/meetups/MeetupList";
 
 function HomePage(props) {
-  console.log("Inside client side code!");
   return (
     <Fragment>
       <Head>
